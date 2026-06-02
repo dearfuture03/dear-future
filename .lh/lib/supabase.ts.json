@@ -1,0 +1,18 @@
+{
+    "sourceFile": "lib/supabase.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1780411500913,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1780411500913,
+            "name": "Commit-0",
+            "content": "import { createClient } from \"@supabase/supabase-js\";\n\nexport const supabase = createClient(\n  process.env.NEXT_PUBLIC_SUPABASE_URL!,\n  process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!\n);"
+        }
+    ]
+}

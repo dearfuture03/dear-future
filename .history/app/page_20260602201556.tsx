@@ -15,42 +15,37 @@ const skillItems = [
 ];
 
 const exploreCards = [
-  ["🎯", "Opportunities", "Find careers, colleges, scholarships, jobs, internships & programs.", "/opportunities", "bg-[#FFF7E6]"],
-  ["👥", "Guidance", "Get help from mentors and volunteers.", "/guidance", "bg-[#F3EEFF]"],
-  ["❤️", "Support a Student", "Mentors, sponsors & volunteers can support students.", "/support", "bg-[#FFF0F5]"],
-  ["👨‍👩‍👧‍👦", "Groups", "Join groups, sessions and peer learning spaces.", "/groups", "bg-[#EEF7FF]"],
+  {
+    icon: "🎯",
+    title: "Opportunities",
+    text: "Find careers, colleges, scholarships, jobs, internships & programs.",
+    href: "/opportunities",
+    bg: "bg-[#FFF7E6]",
+  },
+  {
+    icon: "👥",
+    title: "Guidance",
+    text: "Get help from mentors and volunteers.",
+    href: "/guidance",
+    bg: "bg-[#F3EEFF]",
+  },
+  {
+    icon: "❤️",
+    title: "Support a Student",
+    text: "Mentors, sponsors & volunteers can support students.",
+    href: "/support",
+    bg: "bg-[#FFF0F5]",
+  },
+  {
+    icon: "👨‍👩‍👧‍👦",
+    title: "Groups",
+    text: "Join groups, sessions and peer learning spaces.",
+    href: "/groups",
+    bg: "bg-[#EEF7FF]",
+  },
 ];
 
-export default async function HomePage() {
-  const { data } = await supabase
-    .from("homepage_content")
-    .select("*")
-    .eq("id", 1)
-    .single();
-
-  const content = {
-    workshop_heading:
-      data?.workshop_heading ||
-      "Helping Students See What's Possible — And Giving Them the Tools to Reach Their Goals.",
-    workshop_description:
-      data?.workshop_description ||
-      "Dear Future helps students discover careers, colleges, scholarships, government schemes and future pathways. Through workshops and mentorship, we help them understand what opportunities are available, what they need to do to access them, and how to move forward with confidence.",
-    vision_heading:
-      data?.vision_heading ||
-      "Talent is everywhere. Opportunity is within reach.",
-    vision_description:
-      data?.vision_description ||
-      "We help students discover possibilities, build direction and move toward their future with support.",
-    mentors_count: data?.mentors_count || "25+",
-    volunteers_count: data?.volunteers_count || "50+",
-    partners_count: data?.partners_count || "60+",
-    students_count: data?.students_count || "1,200+",
-    cta_heading:
-      data?.cta_heading ||
-      "We show what's possible. We teach how to reach it.",
-    cta_button_text: data?.cta_button_text || "Get Involved",
-  };
-
+export default function HomePage() {
   return (
     <main className="min-h-screen bg-[#fbf9ff] text-[#07114a] pb-20 md:pb-0">
       <header className="sticky top-0 z-50 bg-[#fbf9ff]/95 backdrop-blur border-b border-slate-100">
@@ -77,6 +72,7 @@ export default async function HomePage() {
         </div>
       </header>
 
+      {/* WORKSHOP TOP */}
       <section className="max-w-7xl mx-auto px-5 md:px-10 pt-6 md:pt-12">
         <div className="grid lg:grid-cols-2 gap-8 items-center rounded-[2rem] bg-white p-5 md:p-8 shadow-sm border border-slate-100">
           <img
@@ -90,33 +86,37 @@ export default async function HomePage() {
               CAREER GUIDANCE WORKSHOPS
             </p>
             <h2 className="mt-3 text-3xl md:text-5xl font-black leading-tight">
-              {content.workshop_heading}
+              Helping Students See What's Possible — And Giving Them the Tools to Reach Their Goals.
             </h2>
             <p className="mt-5 text-slate-600 leading-relaxed font-medium">
-              {content.workshop_description}
+            Dear Future helps students discover careers, colleges, scholarships, government schemes and future pathways.
+            Through workshops and mentorship, we help them understand what opportunities are available, 
+            what they need to do to access them, and how to move forward with confidence.
             </p>
           </div>
         </div>
-
         <div className="mt-7 space-y-4">
-          <a
-            href="/opportunities"
-            className="rounded-full bg-[#6C4CF5] px-6 py-4 text-white font-black shadow-xl flex justify-between items-center"
-          >
-            <span>🎯 Explore Opportunities</span>
-            <span>→</span>
-          </a>
+  <a
+    href="/opportunities"
+    className="rounded-full bg-[#6C4CF5] px-6 py-4 text-white font-black shadow-xl flex justify-between items-center"
+  >
+    <span>🎯 Explore Opportunities</span>
+    <span>→</span>
+  </a>
 
-          <a
-            href="/guidance"
-            className="rounded-full bg-white px-6 py-4 text-[#6C4CF5] font-black shadow-lg border border-slate-100 flex justify-between items-center"
-          >
-            <span>👥 Get Guidance</span>
-            <span>→</span>
-          </a>
-        </div>
+  <a
+    href="/guidance"
+    className="rounded-full bg-white px-6 py-4 text-[#6C4CF5] font-black shadow-lg border border-slate-100 flex justify-between items-center"
+  >
+    <span>👥 Get Guidance</span>
+    <span>→</span>
+  </a>
+
+  
+</div>
       </section>
 
+       {/* COMMUNITY IMPACT */}
       <section className="max-w-7xl mx-auto px-5 md:px-10 py-7">
         <div className="rounded-[2rem] bg-[#07114a] text-white p-6 md:p-8 shadow-xl">
           <h2 className="text-2xl md:text-3xl font-black mb-6">
@@ -124,34 +124,39 @@ export default async function HomePage() {
           </h2>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <ImpactIcon icon="👥" number={content.mentors_count} label="Mentors" />
-            <ImpactIcon icon="❤️" number={content.volunteers_count} label="Volunteers" />
-            <ImpactIcon icon="🏫" number={content.partners_count} label="Partner Schools & NGOs" />
-            <ImpactIcon icon="⭐" number={content.students_count} label="Students Impacted" />
+            <ImpactIcon icon="👥" number="25+" label="Mentors" />
+            <ImpactIcon icon="❤️" number="50+" label="Volunteers" />
+            <ImpactIcon icon="🏫" number="60+" label="Partner Schools & NGOs" />
+            <ImpactIcon icon="⭐" number="1,200+" label="Students Impacted" />
           </div>
         </div>
       </section>
 
+      
+
+
+
+      {/* EXPLORE */}
       <section className="max-w-7xl mx-auto px-5 md:px-10 py-6">
         <h2 className="text-2xl md:text-3xl font-black">
           Explore Dear Future
         </h2>
 
         <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {exploreCards.map(([icon, title, text, href, bg]) => (
+          {exploreCards.map((card) => (
             <a
-              key={title}
-              href={href}
-              className={`${bg} rounded-[1.5rem] p-5 shadow-sm border border-slate-100 flex items-center gap-4`}
+              key={card.title}
+              href={card.href}
+              className={`${card.bg} rounded-[1.5rem] p-5 shadow-sm border border-slate-100 flex items-center gap-4`}
             >
               <div className="h-14 w-14 shrink-0 rounded-full bg-white grid place-items-center text-3xl shadow-sm">
-                {icon}
+                {card.icon}
               </div>
 
               <div className="flex-1">
-                <h3 className="text-lg font-black">{title}</h3>
+                <h3 className="text-lg font-black">{card.title}</h3>
                 <p className="mt-1 text-sm leading-relaxed text-slate-600 font-medium">
-                  {text}
+                  {card.text}
                 </p>
               </div>
 
@@ -161,18 +166,35 @@ export default async function HomePage() {
         </div>
       </section>
 
+      {/* HOW IT WORKS */}
       <section className="max-w-6xl mx-auto px-5 md:px-10 py-8">
         <h2 className="text-2xl md:text-3xl font-black">How It Works</h2>
 
         <div className="mt-6 flex flex-row items-start gap-3 overflow-x-auto pb-2 md:overflow-visible md:items-center">
-          <Step icon="🔭" number="1" title="Discover" text="Explore opportunities and future pathways." />
+          <Step
+            icon="🔭"
+            number="1"
+            title="Discover"
+            text="Explore opportunities and future pathways."
+          />
           <Line />
-          <Step icon="📖" number="2" title="Prepare" text="Build skills, profiles and confidence." />
+          <Step
+            icon="📖"
+            number="2"
+            title="Prepare"
+            text="Build skills, profiles and confidence."
+          />
           <Line />
-          <Step icon="📈" number="3" title="Progress" text="Apply, connect, learn and move forward." />
+          <Step
+            icon="📈"
+            number="3"
+            title="Progress"
+            text="Apply, connect, learn and move forward."
+          />
         </div>
       </section>
 
+            {/* WHAT WE DO */}
       <section className="max-w-7xl mx-auto px-5 md:px-10 py-8 md:py-12">
         <h2 className="text-2xl md:text-3xl font-black mb-5">
           What We Do 💜
@@ -198,28 +220,10 @@ export default async function HomePage() {
           />
         </div>
 
-        <div className="mt-7 flex items-center gap-4">
-          <div className="flex -space-x-3">
-            {[
-              "/images/team/deeaa-luthra-headshot.jpg",
-              "/images/hero-students.jpg",
-              "/images/community-mentorship.jpg",
-              "/images/career-workshop.jpg",
-            ].map((src) => (
-              <img
-                key={src}
-                src={src}
-                alt="Dear Future community"
-                className="h-9 w-9 rounded-full object-cover border-2 border-white shadow"
-              />
-            ))}
-          </div>
-          <p className="text-sm font-bold text-slate-700">
-            Join 1,000+ students already exploring their future
-          </p>
-        </div>
+        
       </section>
 
+     {/* PEOPLE */}
       <section className="max-w-7xl mx-auto px-5 md:px-10 py-8">
         <div className="rounded-[2rem] bg-white p-6 md:p-10 shadow-sm border border-slate-100">
           <h2 className="text-3xl md:text-4xl font-black text-center">
@@ -247,28 +251,28 @@ export default async function HomePage() {
               </div>
             </div>
 
-            <Community icon="👥" title="25+ Mentors" text="Professionals, educators and entrepreneurs." />
-            <Community icon="❤️" title="50+ Volunteers" text="Students and individuals supporting workshops and outreach." />
-            <Community icon="🏫" title="Partner Schools & NGOs" text="Organizations helping us reach more students." />
+            <Community
+              icon="👥"
+              title="25+ Mentors"
+              text="Professionals, educators and entrepreneurs."
+            />
+            <Community
+              icon="❤️"
+              title="50+ Volunteers"
+              text="Students and individuals supporting workshops and outreach."
+            />
+            <Community
+              icon="🏫"
+              title="Partner Schools & NGOs"
+              text="Organizations helping us reach more students."
+            />
           </div>
         </div>
       </section>
 
+      {/* HERO / VISION LOWER */}
       <section className="max-w-7xl mx-auto px-5 md:px-10 py-8">
         <div className="grid md:grid-cols-2 gap-7 md:gap-10 items-center">
-          <div>
-            <h1 className="text-[46px] md:text-7xl font-black leading-[0.95] tracking-tight">
-              {content.vision_heading.split(". ")[0]}.
-              <span className="block text-[#6C4CF5]">
-                {content.vision_heading.split(". ").slice(1).join(". ")}
-              </span>
-            </h1>
-
-            <p className="mt-5 max-w-xl text-[15px] md:text-xl leading-relaxed text-slate-700 font-semibold">
-              {content.vision_description}
-            </p>
-          </div>
-
           <div className="rounded-[2rem] overflow-hidden shadow-sm h-[260px] md:h-[500px]">
             <img
               src="/images/hero-students.jpg"
@@ -276,22 +280,61 @@ export default async function HomePage() {
               className="h-full w-full object-cover"
             />
           </div>
+          <div className="flex items-center gap-4 pt-3">
+    <div className="flex -space-x-3">
+      {[
+        "/images/team/deeaa-luthra-headshot.jpg",
+        "/images/hero-students.jpg",
+        "/images/community-mentorship.jpg",
+        "/images/career-workshop.jpg",
+      ].map((src) => (
+        <img
+          key={src}
+          src={src}
+          alt="Dear Future community"
+          className="h-9 w-9 rounded-full object-cover border-2 border-white shadow"
+        />
+      ))}
+    </div>
+    <p className="text-sm font-bold text-slate-700">
+      Join 1,000+ students already exploring their future
+    </p>
+  </div>
+
+          <div>
+            <h1 className="text-[46px] md:text-7xl font-black leading-[0.95] tracking-tight">
+              Talent is everywhere.
+              <span className="block text-[#6C4CF5]">
+                Opportunity is within reach.
+              </span>
+            </h1>
+
+            <p className="mt-5 max-w-xl text-[15px] md:text-xl leading-relaxed text-slate-700 font-semibold">
+              We help students discover possibilities, build direction and move
+              toward their future with support.
+            </p>
+          </div>
+
+          
         </div>
       </section>
 
+      {/* CTA */}
       <section className="max-w-6xl mx-auto px-5 md:px-10 py-10">
         <div className="rounded-[2.2rem] bg-[#07114a] text-white p-8 md:p-12 grid md:grid-cols-3 gap-8 items-center shadow-2xl">
           <div className="text-6xl">🚀</div>
           <div>
             <h2 className="text-3xl font-black">
-              {content.cta_heading}
+              We show what&apos;s possible.
+              <br />
+              We teach how to reach it.
             </h2>
           </div>
           <a
             href="/guidance"
             className="rounded-full bg-amber-400 text-[#07114a] px-8 py-4 font-black text-center"
           >
-            {content.cta_button_text} →
+            Get Involved →
           </a>
         </div>
       </section>
@@ -301,13 +344,11 @@ export default async function HomePage() {
           💜 For Students. By Youth. With a Community.
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between gap-6">
-          <div>
-            <div className="text-2xl font-black">✨ Dear Future</div>
-            <p className="text-sm text-slate-500 font-semibold">
-              Opportunities. Guidance. Growth.
-            </p>
-          </div>
+        <div>
+          <div className="text-2xl font-black">✨ Dear Future</div>
+          <p className="text-sm text-slate-500 font-semibold">
+            Opportunities. Guidance. Growth.
+          </p>
         </div>
       </footer>
     </main>
@@ -335,7 +376,9 @@ function MissionCard({
       : "from-purple-50 to-white text-[#6C4CF5]";
 
   return (
-    <div className={`rounded-[2rem] bg-gradient-to-br ${theme} p-5 md:p-8 border border-slate-100 shadow-sm`}>
+    <div
+      className={`rounded-[2rem] bg-gradient-to-br ${theme} p-5 md:p-8 border border-slate-100 shadow-sm`}
+    >
       <div className="grid grid-cols-[80px_1fr] gap-5 items-start">
         <div className="h-20 w-20 rounded-full bg-white grid place-items-center text-4xl shadow-sm shrink-0">
           {icon}
@@ -352,7 +395,7 @@ function MissionCard({
         </div>
       </div>
 
-      <div className="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3">
+      <div className="mt-6 grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-3">
         {items.map(([itemIcon, item]) => (
           <div
             key={item}
@@ -367,7 +410,17 @@ function MissionCard({
   );
 }
 
-function Step({ icon, number, title, text }: { icon: string; number: string; title: string; text: string }) {
+function Step({
+  icon,
+  number,
+  title,
+  text,
+}: {
+  icon: string;
+  number: string;
+  title: string;
+  text: string;
+}) {
   return (
     <div className="min-w-[140px] md:min-w-[220px] rounded-[1.5rem] bg-white p-4 shadow-sm border border-slate-100">
       <div className="relative h-14 w-14 rounded-full bg-purple-100 grid place-items-center text-2xl">
@@ -383,10 +436,20 @@ function Step({ icon, number, title, text }: { icon: string; number: string; tit
 }
 
 function Line() {
-  return <div className="hidden md:block flex-1 border-t-2 border-dotted border-[#6C4CF5]" />;
+  return (
+    <div className="hidden md:block flex-1 border-t-2 border-dotted border-[#6C4CF5]" />
+  );
 }
 
-function ImpactIcon({ icon, number, label }: { icon: string; number: string; label: string }) {
+function ImpactIcon({
+  icon,
+  number,
+  label,
+}: {
+  icon: string;
+  number: string;
+  label: string;
+}) {
   return (
     <div className="flex items-center gap-4">
       <div className="h-16 w-16 rounded-full bg-white/10 grid place-items-center text-3xl">
@@ -400,7 +463,15 @@ function ImpactIcon({ icon, number, label }: { icon: string; number: string; lab
   );
 }
 
-function Community({ icon, title, text }: { icon: string; title: string; text: string }) {
+function Community({
+  icon,
+  title,
+  text,
+}: {
+  icon: string;
+  title: string;
+  text: string;
+}) {
   return (
     <div className="rounded-3xl bg-[#fbf9ff] p-5 flex gap-4 items-center">
       <div className="h-20 w-20 rounded-full bg-white grid place-items-center text-4xl shadow-sm shrink-0">
