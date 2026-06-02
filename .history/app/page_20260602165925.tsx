@@ -132,7 +132,34 @@ export default function HomePage() {
 
       
 
+      {/* WHAT WE DO */}
+      <section className="max-w-7xl mx-auto px-5 md:px-10 py-8 md:py-12">
+        <h2 className="text-2xl md:text-3xl font-black mb-5">
+          What We Do 💜
+        </h2>
 
+        <div className="grid lg:grid-cols-2 gap-5">
+          <MissionCard
+            color="green"
+            icon="🌍"
+            number="1. EXPOSURE"
+            title="We show what’s possible."
+            text="Helping students discover careers, colleges, scholarships, skills and more."
+            items={exposureItems}
+          />
+
+          <MissionCard
+            color="purple"
+            icon="🚀"
+            number="2. SKILL & DIRECTION"
+            title="We teach how to reach it."
+            text="Teaching students how to find, apply and access opportunities independently."
+            items={skillItems}
+          />
+        </div>
+
+        
+      </section>
 
       {/* EXPLORE */}
       <section className="max-w-7xl mx-auto px-5 md:px-10 py-6">
@@ -192,35 +219,6 @@ export default function HomePage() {
         </div>
       </section>
 
-            {/* WHAT WE DO */}
-      <section className="max-w-7xl mx-auto px-5 md:px-10 py-8 md:py-12">
-        <h2 className="text-2xl md:text-3xl font-black mb-5">
-          What We Do 💜
-        </h2>
-
-        <div className="grid lg:grid-cols-2 gap-5">
-          <MissionCard
-            color="green"
-            icon="🌍"
-            number="1. EXPOSURE"
-            title="We show what’s possible."
-            text="Helping students discover careers, colleges, scholarships, skills and more."
-            items={exposureItems}
-          />
-
-          <MissionCard
-            color="purple"
-            icon="🚀"
-            number="2. SKILL & DIRECTION"
-            title="We teach how to reach it."
-            text="Teaching students how to find, apply and access opportunities independently."
-            items={skillItems}
-          />
-        </div>
-
-        
-      </section>
-
      {/* PEOPLE */}
       <section className="max-w-7xl mx-auto px-5 md:px-10 py-8">
         <div className="rounded-[2rem] bg-white p-6 md:p-10 shadow-sm border border-slate-100">
@@ -278,6 +276,21 @@ export default function HomePage() {
               className="h-full w-full object-cover"
             />
           </div>
+
+          <div>
+            <h1 className="text-[46px] md:text-7xl font-black leading-[0.95] tracking-tight">
+              Talent is everywhere.
+              <span className="block text-[#6C4CF5]">
+                Opportunity is within reach.
+              </span>
+            </h1>
+
+            <p className="mt-5 max-w-xl text-[15px] md:text-xl leading-relaxed text-slate-700 font-semibold">
+              We help students discover possibilities, build direction and move
+              toward their future with support.
+            </p>
+          </div>
+
           <div className="flex items-center gap-4 pt-3">
     <div className="flex -space-x-3">
       {[
@@ -298,22 +311,6 @@ export default function HomePage() {
       Join 1,000+ students already exploring their future
     </p>
   </div>
-
-          <div>
-            <h1 className="text-[46px] md:text-7xl font-black leading-[0.95] tracking-tight">
-              Talent is everywhere.
-              <span className="block text-[#6C4CF5]">
-                Opportunity is within reach.
-              </span>
-            </h1>
-
-            <p className="mt-5 max-w-xl text-[15px] md:text-xl leading-relaxed text-slate-700 font-semibold">
-              We help students discover possibilities, build direction and move
-              toward their future with support.
-            </p>
-          </div>
-
-          
         </div>
       </section>
 

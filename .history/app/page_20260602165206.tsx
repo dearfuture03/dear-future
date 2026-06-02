@@ -110,7 +110,26 @@ export default function HomePage() {
     <span>→</span>
   </a>
 
-  
+  <div className="flex items-center gap-4 pt-3">
+    <div className="flex -space-x-3">
+      {[
+        "/images/team/deeaa-luthra-headshot.jpg",
+        "/images/hero-students.jpg",
+        "/images/community-mentorship.jpg",
+        "/images/career-workshop.jpg",
+      ].map((src) => (
+        <img
+          key={src}
+          src={src}
+          alt="Dear Future community"
+          className="h-9 w-9 rounded-full object-cover border-2 border-white shadow"
+        />
+      ))}
+    </div>
+    <p className="text-sm font-bold text-slate-700">
+      Join 1,000+ students already exploring their future
+    </p>
+  </div>
 </div>
       </section>
 
@@ -132,7 +151,34 @@ export default function HomePage() {
 
       
 
+      {/* WHAT WE DO */}
+      <section className="max-w-7xl mx-auto px-5 md:px-10 py-8 md:py-12">
+        <h2 className="text-2xl md:text-3xl font-black mb-5">
+          What We Do 💜
+        </h2>
 
+        <div className="grid lg:grid-cols-2 gap-5">
+          <MissionCard
+            color="green"
+            icon="🌍"
+            number="1. EXPOSURE"
+            title="We show what’s possible."
+            text="Helping students discover careers, colleges, scholarships, skills and more."
+            items={exposureItems}
+          />
+
+          <MissionCard
+            color="purple"
+            icon="🚀"
+            number="2. SKILL & DIRECTION"
+            title="We teach how to reach it."
+            text="Teaching students how to find, apply and access opportunities independently."
+            items={skillItems}
+          />
+        </div>
+
+        
+      </section>
 
       {/* EXPLORE */}
       <section className="max-w-7xl mx-auto px-5 md:px-10 py-6">
@@ -192,81 +238,7 @@ export default function HomePage() {
         </div>
       </section>
 
-            {/* WHAT WE DO */}
-      <section className="max-w-7xl mx-auto px-5 md:px-10 py-8 md:py-12">
-        <h2 className="text-2xl md:text-3xl font-black mb-5">
-          What We Do 💜
-        </h2>
-
-        <div className="grid lg:grid-cols-2 gap-5">
-          <MissionCard
-            color="green"
-            icon="🌍"
-            number="1. EXPOSURE"
-            title="We show what’s possible."
-            text="Helping students discover careers, colleges, scholarships, skills and more."
-            items={exposureItems}
-          />
-
-          <MissionCard
-            color="purple"
-            icon="🚀"
-            number="2. SKILL & DIRECTION"
-            title="We teach how to reach it."
-            text="Teaching students how to find, apply and access opportunities independently."
-            items={skillItems}
-          />
-        </div>
-
-        
-      </section>
-
-     {/* PEOPLE */}
-      <section className="max-w-7xl mx-auto px-5 md:px-10 py-8">
-        <div className="rounded-[2rem] bg-white p-6 md:p-10 shadow-sm border border-slate-100">
-          <h2 className="text-3xl md:text-4xl font-black text-center">
-            The People Behind Dear Future
-          </h2>
-          <p className="mt-3 text-center text-slate-600 font-medium">
-            Dear Future is a community of people working together for students.
-          </p>
-
-          <div className="mt-8 grid md:grid-cols-4 gap-5">
-            <div className="rounded-3xl bg-[#fbf9ff] p-5 flex gap-4 items-center">
-              <img
-                src="/images/team/deeaa-luthra-headshot.jpg"
-                alt="Deeaa Luthra"
-                className="h-20 w-20 rounded-full object-cover shrink-0"
-              />
-              <div>
-                <p className="text-sm font-black text-emerald-600">
-                  Founding Member
-                </p>
-                <h3 className="mt-1 text-lg font-black">Deeaa Luthra</h3>
-                <p className="mt-1 text-sm leading-relaxed text-slate-600 font-medium">
-                  Youth leader who helped launch Dear Future.
-                </p>
-              </div>
-            </div>
-
-            <Community
-              icon="👥"
-              title="25+ Mentors"
-              text="Professionals, educators and entrepreneurs."
-            />
-            <Community
-              icon="❤️"
-              title="50+ Volunteers"
-              text="Students and individuals supporting workshops and outreach."
-            />
-            <Community
-              icon="🏫"
-              title="Partner Schools & NGOs"
-              text="Organizations helping us reach more students."
-            />
-          </div>
-        </div>
-      </section>
+     
 
       {/* HERO / VISION LOWER */}
       <section className="max-w-7xl mx-auto px-5 md:px-10 py-8">
@@ -278,26 +250,6 @@ export default function HomePage() {
               className="h-full w-full object-cover"
             />
           </div>
-          <div className="flex items-center gap-4 pt-3">
-    <div className="flex -space-x-3">
-      {[
-        "/images/team/deeaa-luthra-headshot.jpg",
-        "/images/hero-students.jpg",
-        "/images/community-mentorship.jpg",
-        "/images/career-workshop.jpg",
-      ].map((src) => (
-        <img
-          key={src}
-          src={src}
-          alt="Dear Future community"
-          className="h-9 w-9 rounded-full object-cover border-2 border-white shadow"
-        />
-      ))}
-    </div>
-    <p className="text-sm font-bold text-slate-700">
-      Join 1,000+ students already exploring their future
-    </p>
-  </div>
 
           <div>
             <h1 className="text-[46px] md:text-7xl font-black leading-[0.95] tracking-tight">
@@ -312,8 +264,6 @@ export default function HomePage() {
               toward their future with support.
             </p>
           </div>
-
-          
         </div>
       </section>
 
