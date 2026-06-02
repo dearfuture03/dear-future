@@ -87,9 +87,9 @@ export default function HomePage() {
               Helping Students See What's Possible — And Giving Them the Tools to Reach Their Goals on their own.
             </h2>
             <p className="mt-5 text-slate-600 leading-relaxed font-medium">
-            Dear Future helps students discover careers, colleges, scholarships, government schemes and future pathways.
-            Through workshops and mentorship, we help them understand what opportunities are available, 
-            what they need to do to access them, and how to move forward with confidence.
+              Dear Future works with students from government schools,
+              underserved communities, NGOs and youth groups to help them
+              understand careers, skill paths, scholarships and opportunities.
             </p>
           </div>
         </div>
