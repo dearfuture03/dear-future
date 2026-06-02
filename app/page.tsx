@@ -90,7 +90,11 @@ export default async function HomePage() {
               CAREER GUIDANCE WORKSHOPS
             </p>
             <h2 className="mt-3 text-3xl md:text-5xl font-black leading-tight">
+
               {content.workshop_heading}
+
+              Helping Students See What's Possible — And Giving Them the Tools to Reach Their Goals........
+
             </h2>
             <p className="mt-5 text-slate-600 leading-relaxed font-medium">
               {content.workshop_description}
