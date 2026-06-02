@@ -21,23 +21,34 @@ const exploreCards = [
   ["👨‍👩‍👧‍👦", "Groups", "Join groups, sessions and peer learning spaces.", "/groups", "bg-[#EEF7FF]"],
 ];
 
-export default function HomePage() {
+export default async function HomePage() {
+  const { data } = await supabase
+    .from("homepage_content")
+    .select("*")
+    .eq("id", 1)
+    .single();
+
   const content = {
     workshop_heading:
-      "Helping Students See What's Possible — And Giving Them the Tools to Reach Their Goals Independently",
+      data?.workshop_heading ||
+      "Helping Students See What's Possible — And Giving Them the Tools to Reach Their Goals.",
     workshop_description:
+      data?.workshop_description ||
       "Dear Future helps students discover careers, colleges, scholarships, government schemes and future pathways. Through workshops and mentorship, we help them understand what opportunities are available, what they need to do to access them, and how to move forward with confidence.",
     vision_heading:
+      data?.vision_heading ||
       "Talent is everywhere. Opportunity is within reach.",
     vision_description:
+      data?.vision_description ||
       "We help students discover possibilities, build direction and move toward their future with support.",
-    mentors_count: "25+",
-    volunteers_count: "50+",
-    partners_count: "60+",
-    students_count: "1,200+",
+    mentors_count: data?.mentors_count || "25+",
+    volunteers_count: data?.volunteers_count || "50+",
+    partners_count: data?.partners_count || "60+",
+    students_count: data?.students_count || "1,200+",
     cta_heading:
+      data?.cta_heading ||
       "We show what's possible. We teach how to reach it.",
-    cta_button_text: "Get Involved",
+    cta_button_text: data?.cta_button_text || "Get Involved",
   };
 
   return (
