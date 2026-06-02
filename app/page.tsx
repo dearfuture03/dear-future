@@ -84,7 +84,7 @@ export default function HomePage() {
               CAREER GUIDANCE WORKSHOPS
             </p>
             <h2 className="mt-3 text-3xl md:text-5xl font-black leading-tight">
-              Helping Students See What's Possible — And Giving Them the Tools to Reach Their Goals.
+              Helping Students See What's Possible — And Giving Them the Tools to Reach Their Goals........
             </h2>
             <p className="mt-5 text-slate-600 leading-relaxed font-medium">
             Dear Future helps students discover careers, colleges, scholarships, government schemes and future pathways.
