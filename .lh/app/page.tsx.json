@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 49,
+            "activePatchIndex": 50,
             "patches": [
                 {
                     "date": 1780390851197,
@@ -204,6 +204,10 @@
                 {
                     "date": 1780433893021,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,36 +20,25 @@\n   [\"❤️\", \"Support a Student\", \"Mentors, sponsors & volunteers can support students.\", \"/support\", \"bg-[#FFF0F5]\"],\n   [\"👨‍👩‍👧‍👦\", \"Groups\", \"Join groups, sessions and peer learning spaces.\", \"/groups\", \"bg-[#EEF7FF]\"],\n ];\n \n-export default async function HomePage() {\n-  const { data } = await supabase\n-    .from(\"homepage_content\")\n-    .select(\"*\")\n-    .eq(\"id\", 1)\n-    .single();\n-\n+export default function HomePage() {\n   const content = {\n     workshop_heading:\n-      data?.workshop_heading ||\n-      \"Helping Students See What's Possible — And Giving Them the Tools to Reach Their Goals.\",\n+      \"Helping Students See What's Possible — And Giving Them the Tools to Reach Their Goals Independently\",\n     workshop_description:\n-      data?.workshop_description ||\n       \"Dear Future helps students discover careers, colleges, scholarships, government schemes and future pathways. Through workshops and mentorship, we help them understand what opportunities are available, what they need to do to access them, and how to move forward with confidence.\",\n     vision_heading:\n-      data?.vision_heading ||\n       \"Talent is everywhere. Opportunity is within reach.\",\n     vision_description:\n-      data?.vision_description ||\n       \"We help students discover possibilities, build direction and move toward their future with support.\",\n-    mentors_count: data?.mentors_count || \"25+\",\n-    volunteers_count: data?.volunteers_count || \"50+\",\n-    partners_count: data?.partners_count || \"60+\",\n-    students_count: data?.students_count || \"1,200+\",\n+    mentors_count: \"25+\",\n+    volunteers_count: \"50+\",\n+    partners_count: \"60+\",\n+    students_count: \"1,200+\",\n     cta_heading:\n-      data?.cta_heading ||\n       \"We show what's possible. We teach how to reach it.\",\n-    cta_button_text: data?.cta_button_text || \"Get Involved\",\n+    cta_button_text: \"Get Involved\",\n   };\n \n   return (\n     <main className=\"min-h-screen bg-[#fbf9ff] text-[#07114a] pb-20 md:pb-0\">\n"
+                },
+                {
+                    "date": 1780679484266,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n \n export default function HomePage() {\n   const content = {\n     workshop_heading:\n-      \"Helping Students See What's Possible — And Giving Them the Tools to Reach Their Goals Independently\",\n+      \"Helping Students See What's Possible — And Giving Them the Tools to Reach Their Gals Independently\",\n     workshop_description:\n       \"Dear Future helps students discover careers, colleges, scholarships, government schemes and future pathways. Through workshops and mentorship, we help them understand what opportunities are available, what they need to do to access them, and how to move forward with confidence.\",\n     vision_heading:\n       \"Talent is everywhere. Opportunity is within reach.\",\n"
                 }
             ],
             "date": 1780390851197,
