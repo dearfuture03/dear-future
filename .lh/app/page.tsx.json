@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 50,
+            "activePatchIndex": 53,
             "patches": [
                 {
                     "date": 1780390851197,
@@ -208,6 +208,18 @@
                 {
                     "date": 1780679484266,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n \n export default function HomePage() {\n   const content = {\n     workshop_heading:\n-      \"Helping Students See What's Possible — And Giving Them the Tools to Reach Their Goals Independently\",\n+      \"Helping Students See What's Possible — And Giving Them the Tools to Reach Their Gals Independently\",\n     workshop_description:\n       \"Dear Future helps students discover careers, colleges, scholarships, government schemes and future pathways. Through workshops and mentorship, we help them understand what opportunities are available, what they need to do to access them, and how to move forward with confidence.\",\n     vision_heading:\n       \"Talent is everywhere. Opportunity is within reach.\",\n"
+                },
+                {
+                    "date": 1780679922169,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n   const content = {\n     workshop_heading:\n       \"Helping Students See What's Possible — And Giving Them the Tools to Reach Their Gals Independently\",\n     workshop_description:\n-      \"Dear Future helps students discover careers, colleges, scholarships, government schemes and future pathways. Through workshops and mentorship, we help them understand what opportunities are available, what they need to do to access them, and how to move forward with confidence.\",\n+      \"Dear Future helps studnts discover careers, colleges, scholarships, government schemes and future pathways. Through workshops and mentorship, we help them understand what opportunities are available, what they need to do to access them, and how to move forward with confidence.\",\n     vision_heading:\n       \"Talent is everywhere. Opportunity is within reach.\",\n     vision_description:\n       \"We help students discover possibilities, build direction and move toward their future with support.\",\n"
+                },
+                {
+                    "date": 1780679927722,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,11 +23,11 @@\n \n export default function HomePage() {\n   const content = {\n     workshop_heading:\n-      \"Helping Students See What's Possible — And Giving Them the Tools to Reach Their Gals Independently\",\n+      \"Helping Students See What's Possible — And Giving Them the Tools to Reach Their Goals Independently\",\n     workshop_description:\n-      \"Dear Future helps studnts discover careers, colleges, scholarships, government schemes and future pathways. Through workshops and mentorship, we help them understand what opportunities are available, what they need to do to access them, and how to move forward with confidence.\",\n+      \"Dear Future helps students discover careers, colleges, scholarships, government schemes and future pathways. Through workshops and mentorship, we help them understand what opportunities are available, what they need to do to access them, and how to move forward with confidence.\",\n     vision_heading:\n       \"Talent is everywhere. Opportunity is within reach.\",\n     vision_description:\n       \"We help students discover possibilities, build direction and move toward their future with support.\",\n"
+                },
+                {
+                    "date": 1780679936584,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n \n export default function HomePage() {\n   const content = {\n     workshop_heading:\n-      \"Helping Students See What's Possible — And Giving Them the Tools to Reach Their Goals Independently\",\n+      \"Show them what's Possible — And Give them Tools to Reach there.\",\n     workshop_description:\n       \"Dear Future helps students discover careers, colleges, scholarships, government schemes and future pathways. Through workshops and mentorship, we help them understand what opportunities are available, what they need to do to access them, and how to move forward with confidence.\",\n     vision_heading:\n       \"Talent is everywhere. Opportunity is within reach.\",\n"
                 }
             ],
             "date": 1780390851197,

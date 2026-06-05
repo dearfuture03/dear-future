@@ -24,9 +24,9 @@ const exploreCards = [
 export default function HomePage() {
   const content = {
     workshop_heading:
-      "Show them what's Possible — And Give them Tools to Reach there.",
+      "Helping Students See What's Possible — And Giving Them the Tools to Reach Their Gals Independently",
     workshop_description:
-      "Dear Future helps students discover careers, colleges, scholarships, government schemes and future pathways. Through workshops and mentorship, we help them understand what opportunities are available, what they need to do to access them, and how to move forward with confidence.",
+      "Dear Future helps studnts discover careers, colleges, scholarships, government schemes and future pathways. Through workshops and mentorship, we help them understand what opportunities are available, what they need to do to access them, and how to move forward with confidence.",
     vision_heading:
       "Talent is everywhere. Opportunity is within reach.",
     vision_description:
