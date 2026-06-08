@@ -1,0 +1,18 @@
+{
+    "sourceFile": "app/components/BottomNav.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1780731846371,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1780731846371,
+            "name": "Commit-0",
+            "content": "\"use client\";\n\nimport Link from \"next/link\";\nimport { usePathname } from \"next/navigation\";\n\nexport default function BottomNav() {\n  const pathname = usePathname();\n\n  const items = [\n    { href: \"/\", label: \"Home\", icon: \"🏠\" },\n    { href: \"/support-a-student\", label: \"Students\", icon: \"🎓\" },\n    { href: \"/mentors\", label: \"Mentors\", icon: \"🤝\" },\n    { href: \"/community\", label: \"Community\", icon: \"👥\" },\n    { href: \"/profile\", label: \"Profile\", icon: \"👤\" },\n  ];\n\n  return (\n    <nav className=\"fixed bottom-0 left-0 right-0 z-50 border-t border-slate-200 bg-white\">\n      <div className=\"mx-auto flex max-w-md justify-around py-2\">\n        {items.map((item) => {\n          const active =\n            pathname === item.href ||\n            (item.href !== \"/\" && pathname.startsWith(item.href));\n\n          return (\n            <Link\n              key={item.href}\n              href={item.href}\n              className={`flex flex-col items-center text-xs font-semibold ${\n                active ? \"text-violet-600\" : \"text-slate-500\"\n              }`}\n            >\n              <span className=\"text-xl\">{item.icon}</span>\n              {item.label}\n            </Link>\n          );\n        })}\n      </div>\n    </nav>\n  );\n}"
+        }
+    ]
+}

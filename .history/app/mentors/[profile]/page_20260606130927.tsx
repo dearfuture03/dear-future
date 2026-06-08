@@ -233,7 +233,7 @@ export default function MentorsPage() {
           </button>
         </section>
 
-       <div className="h-24" />
+        <div className="h-8" />
       </div>
     </main>
   );
